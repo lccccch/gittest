@@ -1,0 +1,22 @@
+CREATE TABLE `ta_tsplitschema_load` (
+  `l_rowid` INT(11) NOT NULL AUTO_INCREMENT,
+  `c_tenantid` VARCHAR(20) NOT NULL DEFAULT ' ',
+  `c_tacode` VARCHAR(2) NOT NULL DEFAULT ' ',
+  `c_fundcode` VARCHAR(12) NOT NULL DEFAULT ' ',
+  `d_splitdate` INT(11) NOT NULL DEFAULT '0',
+  `f_unitsplit` DECIMAL(12,9) NOT NULL DEFAULT '0.000000000',
+  `c_splitdealflag` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `f_splitnetvalue` DECIMAL(7,4) NOT NULL DEFAULT '0.0000',
+  `c_splittype` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `f_splitfundasset` DECIMAL(16,2) NOT NULL DEFAULT '0.00',
+  `c_isdealtail` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `f_splittail` DECIMAL(16,2) NOT NULL DEFAULT '0.00',
+  `c_dealallshareredeem` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `c_splitshareredeem` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `c_addsplitsharetype` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `c_autodealflag` VARCHAR(1) NOT NULL DEFAULT ' ',
+  `d_lastmodify` INT(11) NOT NULL DEFAULT '0',
+  `c_sysmkrecordflag` VARCHAR(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`l_rowid`),
+  UNIQUE KEY `uidx_tsplitschema` (`c_fundcode`,`d_splitdate`,`c_tenantid`)
+) ENGINE=INNODB DEFAULT CHARSET=gbk
